@@ -32,7 +32,19 @@ fun OnBoardingScreen() {
             PageUi(pager= dataList[page])
             
         }
-
+        HorizontalPagerIndicator(
+            pagerState = pagerState,
+            modifier = Modifier
+                .align(Alignment.CenterHorizontally)
+                .padding(20.dp),
+            activeColor = colorResource(id =
+            R.color.purple_500)
+        )
+        AnimatedVisibility(visible = pagerState.currentPage == 2) {
+            Button(onClick = {}, modifier = Modifier.fillMaxWidth()) {
+                Text(text = "Getting Started")
+            }
+        }
     }
 }
 
